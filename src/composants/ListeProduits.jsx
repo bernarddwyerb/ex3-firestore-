@@ -3,28 +3,33 @@ import Produit from "./Produit";
 import { useEffect, useState } from 'react';
 /******* Ex#3 - Étape D ********************************/ 
 // Importer l'objet bd du fichier firebase.js
-
+import bd from "../data/firebase"
 
 export default function ListeProduits(props) {
   /******* Ex#3 - Étape E ********************************/ 
   // Créer un "état" React pour les produits (utiliser useState)
-  
+  let[produits, setProduits] = useState([]);
     
   useEffect(() => {
     async function getProduits() {
       // On initialise un tableau pour contenir les produits extraits de Firestore
       const tabProduits = [];
-      
+    
       /******* Ex#3 - Étape F ********************************/ 
       // Faire une requête à la collection de produits sur Firestore et remplir les tableau tabProduits avec les données de produits retournées par Firestore
       // [Suggestion : remarquez que la fonction getProduits() est marquée 'async'. Lorsque vous appelez la méthode Firestore qui retourne les produits, cette fonction 
       // est une Promesse, vous pouvez simplement utiliser la syntax 'await' pour attendre le résultat avant de remplir le tableau tabProduits 
       // (visionnez la capsule au sujet du code asynchrone en JavaScript)]
-
+      const reponse = await bd.collection('ex3-produits').get();
+      //console.log(reponse)
+      reponse.forEach(
+        produit => tabProduits.push(produit.data())
+      );
+      console.log(tabProduits)
       
       /******* Ex#3 - Étape G ********************************/ 
       // Modifier l'état des produits (initialisé ci-dessus avec useState) en utilisant le mutateur et le tableau tabProduits
-      
+      setProduits(tabProduits);
     }
     getProduits();
   }, []); // Ne modifiez surtout pas le tableau des dépendances à gauche : vous risquez un appel récurent sans fin de l'API Firebase !!!!
@@ -40,7 +45,13 @@ export default function ListeProduits(props) {
           Attention : les composants Produit s'attendent à recevoir l'état du panier dans leurs props, donc vous devez
           avoir l'attribut "etatPanier={props.etatPanier}" quand vous les générer ici : encore une fois, regardez 
           le code de l'exercice de classe.
-        */}
+        */
+      
+        produits.map( 
+        produit =><Produit etatPanier={props.etatPanier} key={produit.id} {...produit} />
+        )
+        
+        }
 
       </ul>
     </div>
