@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bernarddwyerb/ex3-firestore-.git/static/css/main.1469173b.chunk.css",
-    "main.js": "/bernarddwyerb/ex3-firestore-.git/static/js/main.85cb5955.chunk.js",
-    "main.js.map": "/bernarddwyerb/ex3-firestore-.git/static/js/main.85cb5955.chunk.js.map",
+    "main.js": "/bernarddwyerb/ex3-firestore-.git/static/js/main.5b4c745c.chunk.js",
+    "main.js.map": "/bernarddwyerb/ex3-firestore-.git/static/js/main.5b4c745c.chunk.js.map",
     "runtime-main.js": "/bernarddwyerb/ex3-firestore-.git/static/js/runtime-main.7352b861.js",
     "runtime-main.js.map": "/bernarddwyerb/ex3-firestore-.git/static/js/runtime-main.7352b861.js.map",
     "static/js/2.ee3e78cf.chunk.js": "/bernarddwyerb/ex3-firestore-.git/static/js/2.ee3e78cf.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7352b861.js",
     "static/js/2.ee3e78cf.chunk.js",
     "static/css/main.1469173b.chunk.css",
-    "static/js/main.85cb5955.chunk.js"
+    "static/js/main.5b4c745c.chunk.js"
   ]
 }
